@@ -9,5 +9,15 @@ animalShelter.factory('AnimalShelterFactory', function AnimalShelterFactory() {
     factory.adoptAnimal = function(animal) {
         animal.adopted = true;
     };
+
+    factory.countAnimals = function(type) {
+        var counter = 0;
+        for (var i = 0; i < this.animals.length; i++) {
+            if (this.animals[i].type === type) {
+                counter++;
+            }
+        };
+        return counter;
+    };
     return factory;
 });
