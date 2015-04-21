@@ -10,14 +10,25 @@ animalShelter.factory('AnimalShelterFactory', function AnimalShelterFactory() {
         animal.adopted = true;
     };
 
-    factory.countAnimals = function(type) {
+    factory.countNonAdoptedAnimals = function(type) {
         var counter = 0;
         for (var i = 0; i < this.animals.length; i++) {
-            if (this.animals[i].type === type) {
+            if (this.animals[i].type === type && this.animals[i].adopted === false) {
                 counter++;
             }
         };
         return counter;
     };
+
+    factory.countAdoptedAnimals = function(type) {
+        var counter = 0;
+        for (var i = 0; i < this.animals.length; i++) {
+            if (this.animals[i].type === type && this.animals[i].adopted === true) {
+                counter++;
+            }
+        };
+        return counter;
+    };
+
     return factory;
 });

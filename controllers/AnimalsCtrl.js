@@ -15,9 +15,12 @@ animalShelter.controller('AnimalsCtrl', function AnimalsCtrl($scope, AnimalShelt
         $scope.AnimalShelterFactory.adoptAnimal(animal);
     };
 
-    $scope.countAnimals = function(type) {
-        return $scope.AnimalShelterFactory.countAnimals(type);
+    $scope.countNonAdoptedAnimals = function(type) {
+        return $scope.AnimalShelterFactory.countNonAdoptedAnimals(type);
     };
 
+    $scope.countAdoptedAnimals = function(type) {
+        return $scope.AnimalShelterFactory.countAdoptedAnimals(type);
+    };
 
 });
