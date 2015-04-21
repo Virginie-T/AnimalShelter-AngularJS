@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app='animalShelter'>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="lib/angular.js"></script>
+        <script src="app.js"></script>
+        <script src="services/AnimalShelterFactory.js"></script>
+        <script src="controllers/AnimalsCtrl.js"></script>
+        <title>Animal Shelter</title>
+    </head>
+    <body>
+        <div class='container'>
+            <div ng-controller='AnimalsCtrl'>
+                <div>
+                    <h3>Add animals</h3>
+                    <form ng-submit='addAnimal()' class='form-inline'>
+                        <div class="form-group">
+                            <label for="name">Name: </label>
+                            <input type="text" class="form-control" ng-model="animalName" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="type">Type: </label>
+                            <input type="text" class="form-control" ng-model="animalType" placeholder="Type">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+                <div>
+                    <ul>
+                        <li ng-repeat="item in animals">{{ item.name }}</li>
+                    </ul>
+                </div>
+
+
+                <!-- <div ng-show='animalsShelter.length'>
+                    <h3>Animals on shelter</h3>
+                    <ul>
+                        <li ng-repeat='item in animalsShelter = (animals | filter:{adopted: false})'>{{item.name}} <a ng-click='addAnimalsAdopted(item)'> - adopted</a></li>
+                    </ul>
+                    <h3>Adopted animals</h3>
+                    <ul>
+                        <li ng-repeat='item in animalsShelter = (animals | filter:{adopted: true})'>{{item.name}}</li>
+                    </ul>
+                </div> -->
+
+            </div>
+
+        </div>
+    </body>
+</html>
