@@ -5,5 +5,9 @@ animalShelter.factory('AnimalShelterFactory', function AnimalShelterFactory() {
     factory.addAnimal = function (newName, newType) {
         this.animals.push({name: newName, type: newType, adopted: false});
     };
+
+    factory.adoptAnimal = function(animal) {
+        animal.adopted = true;
+    };
     return factory;
 });

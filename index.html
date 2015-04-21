@@ -35,16 +35,28 @@
 
                 <!-- <div ng-show='item in animals = (animals | filter:{adopted: false})'> -->
                 <div ng-show="animals.length">
-                    <h3>Animals in shelter</h3>
-                    <div>
+                    <div class="col-sm-6">
+                    <h3>Animals in shelter:</h3>
                         <h4>Cats:</h4>
-                        <li ng-repeat='item in animals | filter:{adopted: false, type: "cat"}'>{{item.name}}</li>
+                        <li ng-repeat='item in animals | filter:{adopted: false, type: "cat"}'>{{item.name}} <a ng-click='adoptAnimal(item)'> - adopt me!</a></li>
                         <h4>Dogs:</h4>
-                        <li ng-repeat='item in animals | filter:{adopted: false, type: "dog"}'>{{item.name}}</li>
+                        <li ng-repeat='item in animals | filter:{adopted: false, type: "dog"}'>{{item.name}} <a ng-click='adoptAnimal(item)'> - adopt me!</a></li>
                         <h4>Birds:</h4>
-                        <li ng-repeat='item in animals | filter:{adopted: false, type: "bird"}'>{{item.name}}</li>
+                        <li ng-repeat='item in animals | filter:{adopted: false, type: "bird"}'>{{item.name}} <a ng-click='adoptAnimal(item)'> - adopt me!</a></li>
                         <h4>Rats:</h4>
-                        <li ng-repeat='item in animals | filter:{adopted: false, type: "rat"}'>{{item.name}}</li>
+                        <li ng-repeat='item in animals | filter:{adopted: false, type: "rat"}'>{{item.name}} <a ng-click='adoptAnimal(item)'> - adopt me!</a></li>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>Recently adopted:</h3>
+                        <h4>Cats:</h4>
+                        <li ng-repeat='item in animals | filter:{adopted: true, type: "cat"}'>{{item.name}}</li>
+                        <h4>Dogs:</h4>
+                        <li ng-repeat='item in animals | filter:{adopted: true, type: "dog"}'>{{item.name}}</li>
+                        <h4>Birds:</h4>
+                        <li ng-repeat='item in animals | filter:{adopted: true, type: "bird"}'>{{item.name}}</li>
+                        <h4>Rats:</h4>
+                        <li ng-repeat='item in animals | filter:{adopted: true, type: "rat"}'>{{item.name}}</li>
+                    </div>
                         <!-- <h4>Cat</h4>
                         <ul>
                             <li  ng-repeat='item in animals = (animals | filter:{type: cat})'>{{item.name}} <a ng-click='addAnimalsAdopted(item)'> - adopt</a></li>
@@ -65,7 +77,6 @@
                     <ul>
                         <li ng-repeat='item in animals = (animals | filter:{adopted: true})'>{{item.name}}</li>
                     </ul> -->
-                </div>
 
             </div>
 
