@@ -3,9 +3,10 @@ animalShelter.controller('AnimalsCtrl', function AnimalsCtrl($scope, AnimalShelt
     $scope.animals = AnimalShelterFactory.animals;
 
     $scope.addAnimal = function () {
-        console.log("omg plz");
         var name = $scope.animalName;
         var type = $scope.animalType;
+        console.log(name);
+        console.log(type);
 
         $scope.AnimalShelterFactory.addAnimal(name, type);
         $scope.animalName = null;

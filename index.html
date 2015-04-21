@@ -21,28 +21,51 @@
                         </div>
                         <div class="form-group">
                             <label for="type">Type: </label>
-                            <input type="text" class="form-control" ng-model="animalType" placeholder="Type">
+                            <select ng-model="animalType">
+                                <option value='cat'>Cat</option>
+                                <option value='dog'>Dog</option>
+                                <option value='bird'>Bird</option>
+                                <option value='rat'>Rat</option>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
                 </div>
-                <div>
-                    <ul>
-                        <li ng-repeat="item in animals">{{ item.name }}</li>
-                    </ul>
-                </div>
 
 
-                <!-- <div ng-show='animalsShelter.length'>
-                    <h3>Animals on shelter</h3>
-                    <ul>
-                        <li ng-repeat='item in animalsShelter = (animals | filter:{adopted: false})'>{{item.name}} <a ng-click='addAnimalsAdopted(item)'> - adopted</a></li>
-                    </ul>
+                <!-- <div ng-show='item in animals = (animals | filter:{adopted: false})'> -->
+                <div ng-show="animals.length">
+                    <h3>Animals in shelter</h3>
+                    <div>
+                        <h4>Cats:</h4>
+                        <li ng-repeat='item in animals | filter:{adopted: false, type: "cat"}'>{{item.name}}</li>
+                        <h4>Dogs:</h4>
+                        <li ng-repeat='item in animals | filter:{adopted: false, type: "dog"}'>{{item.name}}</li>
+                        <h4>Birds:</h4>
+                        <li ng-repeat='item in animals | filter:{adopted: false, type: "bird"}'>{{item.name}}</li>
+                        <h4>Rats:</h4>
+                        <li ng-repeat='item in animals | filter:{adopted: false, type: "rat"}'>{{item.name}}</li>
+                        <!-- <h4>Cat</h4>
+                        <ul>
+                            <li  ng-repeat='item in animals = (animals | filter:{type: cat})'>{{item.name}} <a ng-click='addAnimalsAdopted(item)'> - adopt</a></li>
+                        </ul>
+
+                        <h4>Dog</h4>
+                        <ul>
+                            <li  ng-repeat='item in animals = (animals | filter:{type: dog})'>{{item.name}} <a ng-click='addAnimalsAdopted(item)'> - adopt</a></li>
+                        </ul>
+
+                        <h4>Bird</h4>
+                        <ul>
+                            <li  ng-repeat='item in animals = (animals | filter:{type: bird})'>{{item.name}} <a ng-click='addAnimalsAdopted(item)'> - adopt</a></li>
+                        </ul>
+                    </div>
+
                     <h3>Adopted animals</h3>
                     <ul>
-                        <li ng-repeat='item in animalsShelter = (animals | filter:{adopted: true})'>{{item.name}}</li>
-                    </ul>
-                </div> -->
+                        <li ng-repeat='item in animals = (animals | filter:{adopted: true})'>{{item.name}}</li>
+                    </ul> -->
+                </div>
 
             </div>
 
