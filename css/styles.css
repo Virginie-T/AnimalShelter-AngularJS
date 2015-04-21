@@ -1,0 +1,64 @@
+h1 {
+    text-align: center;
+    color: #20B2AA;
+}
+
+#add_new {
+    border: 4px dotted white;
+    padding: 30px;
+    text-align: center;
+    width: 80%;
+    margin: 60px auto;
+    background-color: rgba(32,178,170, 0.5);
+    color: white;
+    width: 50%;
+}
+
+hr {
+    height: 3px;
+    background-color: #20B2AA;
+    box-shadow: 3px 3px 5px #888888;
+}
+
+.glyphicon {
+    color: rgba(32,178,170, 0.5);
+}
+
+.btn {
+    color: rgb(32,178,170);
+}
+
+.input {
+    color: rgb(32,178,170);
+}
+
+select {
+    color: rgb(32,178,170);
+    height: 34px;
+}
+
+#form-header {
+    margin-top: 0;
+}
+
+#pic {
+    margin-top: -80px;
+    width: 100%;
+}
+
+img {
+    margin-top : 20px;
+    width: 100%;
+}
+
+#fixe {
+    position: fixed;
+    top:0;
+    z-index: 1;
+    background-color: white;
+
+}
+
+.animal-list {
+    margin-top: 705px;
+}

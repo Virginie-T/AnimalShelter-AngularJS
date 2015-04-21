@@ -11,13 +11,17 @@
     </head>
     <body>
         <div class='container'>
+
+
             <div ng-controller='AnimalsCtrl'>
-                <div>
-                    <h3>Add animals</h3>
+            <div id="fixe">
+                <h1>Happy Animal Shelter</h1>
+                <div id='add_new'>
+                    <h3 id="form-header">Add animals</h3>
                     <form ng-submit='addAnimal()' class='form-inline'>
                         <div class="form-group">
                             <label for="name">Name: </label>
-                            <input type="text" class="form-control" ng-model="animalName" placeholder="Name">
+                            <input type="text" class="form-control input" ng-model="animalName" placeholder="Name">
                         </div>
                         <div class="form-group">
                             <label for="type">Type: </label>
@@ -32,35 +36,43 @@
                     </form>
                 </div>
 
-
-                <!-- <div ng-show='item in animals = (animals | filter:{adopted: false})'> -->
-                <div ng-show="animals.length">
-                    <div class="col-sm-6">
-                    <h3>Animals in shelter:</h3>
-                        <h4 ng-show="countNonAdoptedAnimals('cat') > 0">Cats: {{countNonAdoptedAnimals("cat")}}</h4>
-                        <li ng-repeat='item in animals | filter:{adopted: false, type: "cat"}'>{{item.name}} <a ng-click='adoptAnimal(item)'>adopt me!</a></li>
-                        <h4 ng-show="countNonAdoptedAnimals('dog') > 0">Dogs: {{countNonAdoptedAnimals("dog")}}</h4>
-                        <li ng-repeat='item in animals | filter:{adopted: false, type: "dog"}'>{{item.name}} <a ng-click='adoptAnimal(item)'>adopt me!</a></li>
-                        <h4 ng-show="countNonAdoptedAnimals('bird') > 0">Birds: {{countNonAdoptedAnimals("bird")}}</h4>
-                        <li ng-repeat='item in animals | filter:{adopted: false, type: "bird"}'>{{item.name}} <a ng-click='adoptAnimal(item)'>adopt me!</a></li>
-                        <h4 ng-show="countNonAdoptedAnimals('rat') > 0">Rats: {{countNonAdoptedAnimals("rat")}}</h4>
-                        <li ng-repeat='item in animals | filter:{adopted: false, type: "rat"}'>{{item.name}} <a ng-click='adoptAnimal(item)'>adopt me!</a></li>
-                    </div>
-                    <div class="col-sm-6">
-                        <h3>Recently adopted:</h3>
-                        <h4 ng-show="countAdoptedAnimals('cat') > 0">Cats: {{countAdoptedAnimals("cat")}}</h4>
-                        <li ng-repeat='item in animals | filter:{adopted: true, type: "cat"}'>{{item.name}}</li>
-                        <h4 ng-show="countAdoptedAnimals('dog') > 0">Dogs: {{countAdoptedAnimals("dog")}}</h4>
-                        <li ng-repeat='item in animals | filter:{adopted: true, type: "dog"}'>{{item.name}}</li>
-                        <h4 ng-show="countAdoptedAnimals('bird') > 0">Birds: {{countAdoptedAnimals("bird")}}</h4>
-                        <li ng-repeat='item in animals | filter:{adopted: true, type: "bird"}'>{{item.name}}</li>
-                        <h4 ng-show="countAdoptedAnimals('rat') > 0">Rats: {{countAdoptedAnimals("rat")}}</h4>
-                        <li ng-repeat='item in animals | filter:{adopted: true, type: "rat"}'>{{item.name}}</li>
-                    </div>
-
-
+                <div id="pic">
+                    <img src="img/Pets.jpg" alt="image" />
+                </div>
+                <hr>
             </div>
 
+            <div class="animal-list" ng-show="animals.length">
+                <div class="col-sm-6">
+                <h3><span class='glyphicon glyphicon-heart'></span>  Animals in shelter:</h3>
+
+                    <h4 ng-show="countNonAdoptedAnimals('cat') > 0">Cats: {{countNonAdoptedAnimals("cat")}}</h4>
+                    <li ng-repeat='item in animals | filter:{adopted: false, type: "cat"}'>{{item.name}} <a ng-click='adoptAnimal(item)'>adopt me!</a></li>
+
+                    <h4 ng-show="countNonAdoptedAnimals('dog') > 0">Dogs: {{countNonAdoptedAnimals("dog")}}</h4>
+                    <li ng-repeat='item in animals | filter:{adopted: false, type: "dog"}'>{{item.name}} <a ng-click='adoptAnimal(item)'>adopt me!</a></li>
+
+                    <h4 ng-show="countNonAdoptedAnimals('bird') > 0">Birds: {{countNonAdoptedAnimals("bird")}}</h4>
+                    <li ng-repeat='item in animals | filter:{adopted: false, type: "bird"}'>{{item.name}} <a ng-click='adoptAnimal(item)'>adopt me!</a></li>
+
+                    <h4 ng-show="countNonAdoptedAnimals('rat') > 0">Rats: {{countNonAdoptedAnimals("rat")}}</h4>
+                    <li ng-repeat='item in animals | filter:{adopted: false, type: "rat"}'>{{item.name}} <a ng-click='adoptAnimal(item)'>adopt me!</a></li>
+
+                </div>
+
+                <div class="col-sm-6">
+                    <h3><span class='glyphicon glyphicon-home'></span>  Recently adopted:</h3>
+                    <h4 ng-show="countAdoptedAnimals('cat') > 0">Cats: {{countAdoptedAnimals("cat")}}</h4>
+                    <li ng-repeat='item in animals | filter:{adopted: true, type: "cat"}'>{{item.name}}</li>
+                    <h4 ng-show="countAdoptedAnimals('dog') > 0">Dogs: {{countAdoptedAnimals("dog")}}</h4>
+                    <li ng-repeat='item in animals | filter:{adopted: true, type: "dog"}'>{{item.name}}</li>
+                    <h4 ng-show="countAdoptedAnimals('bird') > 0">Birds: {{countAdoptedAnimals("bird")}}</h4>
+                    <li ng-repeat='item in animals | filter:{adopted: true, type: "bird"}'>{{item.name}}</li>
+                    <h4 ng-show="countAdoptedAnimals('rat') > 0">Rats: {{countAdoptedAnimals("rat")}}</h4>
+                    <li ng-repeat='item in animals | filter:{adopted: true, type: "rat"}'>{{item.name}}</li>
+                </div>
+            </div>
+        </div>
         </div>
     </body>
 </html>
