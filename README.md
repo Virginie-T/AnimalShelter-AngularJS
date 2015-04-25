@@ -18,8 +18,8 @@
 
 ###Setup Instructions
 
-Ex. 1. Clone GitHub repository to your local machine.
-    2. Start the web app by loading index.html in your browser
+1. Clone GitHub repository to your local machine.
+2. Start the web app by loading index.html in your browser
 
 
 ####Copyright (c) 2015 Bojana Skarich & Virginie Trubiano
