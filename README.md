@@ -18,7 +18,7 @@
 
 ###Setup Instructions
 
-1. Clone GitHub repository to your local machine.
+Ex.  1. Clone GitHub repository to your local machine.
 2. Start the web app by loading index.html in your browser
 
 
