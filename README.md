@@ -22,4 +22,4 @@
 2. Start the web app by loading index.html in your browser
 
 
-####Copyright (c) 2015 Bojana Skarich & Virginie Trubiano
+####Copyright (c) 2015 Cynthia Wilhelm & Virginie Trubiano
